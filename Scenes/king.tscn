@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://buxfphkg4qys2"]
+
+[ext_resource type="PackedScene" uid="uid://bhw4omdcqqybb" path="res://Assets/King.glb" id="1_y7fah"]
+
+[node name="King" instance=ExtResource("1_y7fah")]
+
+[node name="Playerteethlower" parent="Playerarma/Skeleton3D" index="0"]
+transform = Transform3D(0.401439, -4.90637e-08, -5.9417e-07, 4.90622e-08, 0.401439, -1.12772e-06, 5.9417e-07, 1.12772e-06, 0.401439, -0.00161582, 1.26667, 0.408595)
+bone_idx = 115
+
+[node name="PlayeririsL" parent="Playerarma/Skeleton3D" index="1"]
+transform = Transform3D(-2.5, -3.22081e-07, -5.5325e-07, -3.22081e-07, 2.5, 1.51068e-13, 6.91126e-07, -2.64056e-13, -2, 0.236113, 1.60224, 0.468366)
+bone_idx = 118
+
+[node name="PlayeririsR" parent="Playerarma/Skeleton3D" index="2"]
+transform = Transform3D(-2.5, -3.27826e-07, -7.17515e-07, -3.27826e-07, 2.5, -7.15256e-07, 8.96894e-07, -8.9407e-07, -2, -0.236001, 1.60224, 0.468366)
+bone_idx = 121
+
+[node name="Playerteethupper" parent="Playerarma/Skeleton3D" index="3"]
+transform = Transform3D(0.401439, -4.43645e-11, -5.92797e-07, 4.43627e-11, 0.401439, 3.84751e-14, 5.92797e-07, -2.24259e-15, 0.401439, -0.00161578, 1.35686, 0.408595)
+bone_idx = 139

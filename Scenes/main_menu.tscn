@@ -1,0 +1,426 @@
+[gd_scene load_steps=20 format=3 uid="uid://c688aauem4psy"]
+
+[ext_resource type="Texture2D" uid="uid://e4tm5mr8der4" path="res://Assets/Menu/Steve.png" id="1_3uvjv"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_mat6n"]
+[ext_resource type="Texture2D" uid="uid://blx853jhiqlph" path="res://Assets/Menu/SteveTilt1.png" id="2_cgtge"]
+[ext_resource type="Texture2D" uid="uid://pprldqp1upou" path="res://Assets/Menu/SteveTilt2.png" id="3_kmfq7"]
+[ext_resource type="Texture2D" uid="uid://bk4ks8mrs7021" path="res://Assets/Menu/SteveTilt3.png" id="4_d2xxv"]
+[ext_resource type="Texture2D" uid="uid://c7aqm3qlon6ee" path="res://Assets/Menu/SteveStare.png" id="5_cigbu"]
+[ext_resource type="Texture2D" uid="uid://cf4sbj8fguhif" path="res://Assets/Menu/SteveMove.png" id="6_mrucf"]
+[ext_resource type="Texture2D" uid="uid://cqce3ppb0fm20" path="res://Assets/Menu/2d_lights_and_shadows_neutral_point_light.webp" id="7_78h0o"]
+[ext_resource type="Texture2D" uid="uid://dpeomk65kogs6" path="res://Assets/Menu/Five.png" id="8_hl5rt"]
+[ext_resource type="Texture2D" uid="uid://cdr86tqascrua" path="res://Assets/Menu/Nights.png" id="9_fwx7w"]
+[ext_resource type="Texture2D" uid="uid://7xo6jfrrp2yl" path="res://Assets/Menu/in.png" id="10_e7s5g"]
+[ext_resource type="Texture2D" uid="uid://djjuw0kbjt3p8" path="res://Assets/Menu/LittleFeather.png" id="11_k7822"]
+[ext_resource type="Script" path="res://Scripts/Quit.gd" id="13_7miym"]
+[ext_resource type="Script" path="res://Scripts/Options.gd" id="13_qb74p"]
+[ext_resource type="AudioStream" uid="uid://0bxgrs18jm2g" path="res://Assets/Menu/Music.ogg" id="15_iysjq"]
+[ext_resource type="AudioStream" uid="uid://crlygbw7p34yy" path="res://Assets/Audio/AltMusic.ogg" id="16_rxwq8"]
+[ext_resource type="Texture2D" uid="uid://bmdqlbwbuj2gw" path="res://Assets/Menu/News.png" id="16_tt7wp"]
+[ext_resource type="AudioStream" uid="uid://dfbvinmmgqgmj" path="res://Assets/Menu/Lightning.mp3" id="17_h8ss7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fvew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3uvjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cgtge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kmfq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3uvjv")
+}],
+"loop": false,
+"name": &"crazy1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cgtge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d2xxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kmfq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3uvjv")
+}],
+"loop": false,
+"name": &"crazy2",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cigbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cgtge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d2xxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kmfq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mrucf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cgtge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3uvjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cigbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cgtge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d2xxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kmfq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mrucf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cgtge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3uvjv")
+}],
+"loop": false,
+"name": &"crazybig",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3uvjv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_d2xxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3uvjv")
+}],
+"loop": false,
+"name": &"quickcrazy",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3uvjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mrucf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cigbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cigbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cigbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cigbu")
+}],
+"loop": false,
+"name": &"stare",
+"speed": 3.0
+}]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_mat6n")
+
+[node name="Main" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Main"]
+color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[node name="RightAnchor" type="Control" parent="Main"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1072.0
+offset_top = 568.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Steve" type="AnimatedSprite2D" parent="Main/RightAnchor"]
+position = Vector2(-175, -209)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_7fvew")
+animation = &"stare"
+
+[node name="Light" type="PointLight2D" parent="Main/RightAnchor"]
+position = Vector2(-189, -470)
+scale = Vector2(2.3418, 2.50977)
+range_z_min = -3239
+texture = ExtResource("7_78h0o")
+
+[node name="LeftAnchor" type="Control" parent="Main"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Five" type="Sprite2D" parent="Main/LeftAnchor"]
+position = Vector2(128, 90)
+scale = Vector2(1.04481, 1.15769)
+texture = ExtResource("8_hl5rt")
+
+[node name="Nights" type="Sprite2D" parent="Main/LeftAnchor"]
+position = Vector2(195, 210)
+scale = Vector2(0.937596, 1.09658)
+texture = ExtResource("9_fwx7w")
+
+[node name="in" type="Sprite2D" parent="Main/LeftAnchor"]
+position = Vector2(90, 320)
+texture = ExtResource("10_e7s5g")
+
+[node name="LittleFeather" type="Sprite2D" parent="Main/LeftAnchor"]
+position = Vector2(381, 431)
+texture = ExtResource("11_k7822")
+
+[node name="Light" type="PointLight2D" parent="Main/LeftAnchor"]
+position = Vector2(188, 145)
+scale = Vector2(3.06152, 2.7666)
+range_z_min = -3239
+texture = ExtResource("7_78h0o")
+
+[node name="Light2" type="PointLight2D" parent="Main/LeftAnchor"]
+position = Vector2(253, 553)
+scale = Vector2(3.06152, 2.7666)
+range_z_min = -3239
+texture = ExtResource("7_78h0o")
+
+[node name="Light3" type="PointLight2D" parent="Main/LeftAnchor"]
+position = Vector2(561, 552)
+scale = Vector2(2.20263, 2.16064)
+range_z_min = -3239
+texture = ExtResource("7_78h0o")
+
+[node name="NewGame" type="Button" parent="Main/LeftAnchor"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 519.0
+offset_right = 154.0
+offset_bottom = 601.0
+text = "Night 1"
+
+[node name="Continue" type="Button" parent="Main/LeftAnchor"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 519.0
+offset_right = 290.0
+offset_bottom = 601.0
+text = "Night 2
+"
+
+[node name="Options" type="Button" parent="Main/LeftAnchor"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 519.0
+offset_right = 426.0
+offset_bottom = 601.0
+text = "Options"
+
+[node name="Quit" type="Button" parent="Main/LeftAnchor"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 519.0
+offset_right = 562.0
+offset_bottom = 601.0
+text = "Quit"
+script = ExtResource("13_7miym")
+
+[node name="NightCount" type="Label" parent="Main/LeftAnchor"]
+visible = false
+layout_mode = 0
+offset_left = 182.0
+offset_top = 606.0
+offset_right = 243.0
+offset_bottom = 632.0
+text = "Night: 1"
+
+[node name="DemoLabel" type="Label" parent="Main"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 471.0
+offset_right = 89.0
+offset_bottom = 497.0
+scale = Vector2(2, 2)
+text = "DEMO"
+
+[node name="Options" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_qb74p")
+
+[node name="PointLight2D" type="PointLight2D" parent="Options"]
+position = Vector2(272, 252)
+scale = Vector2(2.04688, 1.84375)
+texture = ExtResource("7_78h0o")
+
+[node name="Fullscreen" type="CheckButton" parent="Options"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 164.0
+offset_bottom = 67.0
+scale = Vector2(2, 2)
+button_pressed = true
+text = "Fullscreen"
+
+[node name="Calls" type="CheckButton" parent="Options"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 98.0
+offset_right = 164.0
+offset_bottom = 129.0
+scale = Vector2(2, 2)
+button_pressed = true
+text = "Calls"
+
+[node name="Return" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 183.0
+offset_right = 127.0
+offset_bottom = 230.0
+text = "Return
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_iysjq")
+
+[node name="AltMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_rxwq8")
+
+[node name="Warning" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="Warning"]
+position = Vector2(5, -12)
+scale = Vector2(2.04688, 1.84375)
+texture = ExtResource("7_78h0o")
+
+[node name="Label" type="Label" parent="Warning"]
+layout_mode = 0
+offset_left = -246.0
+offset_top = -34.0
+offset_right = 259.0
+offset_bottom = 44.0
+text = "                                                 WARNING!
+
+This game has flashing lights, loud noises, and lots of jumpscares!"
+
+[node name="WarningTimer" type="Timer" parent="Warning"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="News" type="Sprite2D" parent="Warning"]
+visible = false
+position = Vector2(30, 20)
+scale = Vector2(0.804348, 0.798005)
+texture = ExtResource("16_tt7wp")
+
+[node name="NewsTimer" type="Timer" parent="Warning/News"]
+wait_time = 5.0
+
+[node name="NewsContinue" type="Button" parent="Warning/News"]
+offset_left = 292.162
+offset_top = 309.522
+offset_right = 439.162
+offset_bottom = 379.522
+text = "Continue"
+
+[node name="NightIntro" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="NightIntro"]
+position = Vector2(5, -12)
+scale = Vector2(2.04688, 1.84375)
+texture = ExtResource("7_78h0o")
+
+[node name="Label" type="Label" parent="NightIntro"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = -27.0
+offset_right = -5.0
+offset_bottom = -1.0
+scale = Vector2(2, 2)
+text = "Night 1"
+
+[node name="Lightning" type="AudioStreamPlayer" parent="NightIntro"]
+stream = ExtResource("17_h8ss7")
+
+[connection signal="pressed" from="Main/LeftAnchor/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Main/LeftAnchor/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Main/LeftAnchor/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Main/LeftAnchor/Quit" to="Main/LeftAnchor/Quit" method="_on_pressed"]
+[connection signal="toggled" from="Options/Fullscreen" to="Options" method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="Options/Calls" to="Options" method="_on_calls_toggled"]
+[connection signal="pressed" from="Options/Return" to="." method="_on_return_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Warning/WarningTimer" to="." method="_on_warning_timer_timeout"]
+[connection signal="pressed" from="Warning/News/NewsContinue" to="." method="_on_news_continue_pressed"]
+[connection signal="finished" from="NightIntro/Lightning" to="." method="_on_lightning_finished"]

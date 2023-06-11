@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bir5dl8g4ds2x"
+path="res://.godot/imported/IronBar.obj-56ec31fd6d041ec1eb5041eb9ed9ba7f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/IronBar.obj-56ec31fd6d041ec1eb5041eb9ed9ba7f.mesh"]
+
+source_file="res://Saloon/IronBar/IronBar.obj"
+dest_files=["res://.godot/imported/IronBar.obj-56ec31fd6d041ec1eb5041eb9ed9ba7f.mesh", "res://.godot/imported/IronBar.obj-56ec31fd6d041ec1eb5041eb9ed9ba7f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

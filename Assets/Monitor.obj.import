@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cd6u7jdsxgn3e"
+path="res://.godot/imported/Monitor.obj-85ca1195522caf3ec1e3371639185223.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Monitor.obj-85ca1195522caf3ec1e3371639185223.mesh"]
+
+source_file="res://Assets/Monitor.obj"
+dest_files=["res://.godot/imported/Monitor.obj-85ca1195522caf3ec1e3371639185223.mesh", "res://.godot/imported/Monitor.obj-85ca1195522caf3ec1e3371639185223.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

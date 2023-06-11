@@ -1,0 +1,7 @@
+res://Scenes/main.tscn
+res://Scenes/saloon.tscn
+res://Scenes/RotateCamera.tscn
+res://Scenes/monitor_ui.tscn
+res://Scenes/camera_ui.tscn
+res://Scenes/main_menu.tscn
+res://Scripts/Options.gd

@@ -1,0 +1,669 @@
+[gd_scene load_steps=60 format=3 uid="uid://chwaqj7ogbbgm"]
+
+[ext_resource type="Script" path="res://Scripts/CameraPivot.gd" id="1_11qfi"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_vhpl8"]
+[ext_resource type="PackedScene" uid="uid://dqymym4ucfwty" path="res://Scenes/saloon.tscn" id="1_wegmh"]
+[ext_resource type="PackedScene" uid="uid://cclfyqmyhsl5n" path="res://Scenes/RotateCamera.tscn" id="2_wdal1"]
+[ext_resource type="PackedScene" uid="uid://5mshmj7wus5k" path="res://Scenes/monitor_ui.tscn" id="3_xwir0"]
+[ext_resource type="Texture2D" uid="uid://b0t8dutr7rvdi" path="res://Assets/Light.webp" id="4_y0201"]
+[ext_resource type="AudioStream" uid="uid://bob6h1mv5ww7g" path="res://Assets/Audio/CamsON.wav" id="5_g0stf"]
+[ext_resource type="Texture2D" uid="uid://derm062i2fjag" path="res://Assets/Door.png" id="5_n36xr"]
+[ext_resource type="AudioStream" uid="uid://ce31p8uoiu4tc" path="res://Assets/Audio/CamsAmbience.ogg" id="6_uk40k"]
+[ext_resource type="AudioStream" uid="uid://drlixht7chkci" path="res://Assets/Audio/RedstoneON.mp3" id="7_in52t"]
+[ext_resource type="AudioStream" uid="uid://dh3gwgrjc3c70" path="res://Assets/Audio/CamsOFF.wav" id="7_yhi0y"]
+[ext_resource type="AudioStream" uid="uid://dy4iupxxvanxv" path="res://Assets/Audio/CamChange.wav" id="8_7jwo3"]
+[ext_resource type="AudioStream" uid="uid://cpstxn7xr1b0h" path="res://Assets/Audio/RedstoneOFF.mp3" id="8_h6rcc"]
+[ext_resource type="Texture2D" uid="uid://bbuc0pnde60ln" path="res://Assets/CamIconpng.png" id="8_he51f"]
+[ext_resource type="AudioStream" uid="uid://dt6lmf6ks5xvu" path="res://Assets/Audio/RedstoneLOOP.mp3" id="9_mswxl"]
+[ext_resource type="ArrayMesh" uid="uid://bir5dl8g4ds2x" path="res://Saloon/IronBar/IronBar.obj" id="10_b885i"]
+[ext_resource type="AudioStream" uid="uid://bnjp4du7f2e7e" path="res://Assets/Audio/Idle.mp3" id="10_ipwfj"]
+[ext_resource type="PackedScene" uid="uid://bdcen5gbyxxgq" path="res://Scenes/camera_ui.tscn" id="11_st4js"]
+[ext_resource type="AudioStream" uid="uid://bn118xkwkywvu" path="res://Assets/Audio/Creaking.wav" id="12_bq2co"]
+[ext_resource type="AudioStream" uid="uid://bh8xd4tywj7ck" path="res://Assets/Audio/Door.wav" id="13_lw8hi"]
+[ext_resource type="Script" path="res://Scripts/Power.gd" id="15_em0au"]
+[ext_resource type="Script" path="res://Scripts/PhoneCalls.gd" id="15_opsrd"]
+[ext_resource type="AudioStream" uid="uid://b68gqemswfx21" path="res://Assets/Audio/Night1Call.mp3" id="16_jfero"]
+[ext_resource type="AudioStream" uid="uid://dw0v6irvsr2jn" path="res://Assets/Audio/Night2Call.mp3" id="17_j23fj"]
+[ext_resource type="Shader" path="res://Scripts/monitor_ui.gdshader" id="18_k4nsl"]
+[ext_resource type="AudioStream" uid="uid://7kunwwk1od2x" path="res://Assets/Audio/MinionBreak.ogg" id="19_5drju"]
+[ext_resource type="AudioStream" uid="uid://bmqgej52rqe1b" path="res://Assets/Audio/DoorBroken.mp3" id="20_jqe71"]
+[ext_resource type="AudioStream" uid="uid://byxlis01vjs3y" path="res://Assets/Audio/PowerDown.mp3" id="23_tr83s"]
+[ext_resource type="Script" path="res://Scripts/Clock.gd" id="24_7cisg"]
+[ext_resource type="PackedScene" uid="uid://bhw4omdcqqybb" path="res://Assets/King.glb" id="24_k1tl5"]
+[ext_resource type="AudioStream" uid="uid://ck70r6vjovx2o" path="res://Assets/Audio/Beeping.ogg" id="25_q0ou1"]
+[ext_resource type="AudioStream" uid="uid://b6y6eolq0elq4" path="res://Assets/Audio/KebabyScary.ogg" id="25_wdcb1"]
+
+[sub_resource type="Animation" id="Animation_qnipx"]
+resource_name = "KebabyJumpscare"
+length = 0.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPivot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.489686, 0.510105, -0.489686, 0.510105)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("King")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -11.3525, 4.08726, 4.05364, 0.1, 1, -11.3525, 4.08726, 4.05364, 0.2, 1, -11.4932, 4.03744, 4.10563)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("King")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.496289, 0.548215, -0.408769, 0.534851, 0.1, 1, 0.519619, 0.526154, -0.431601, 0.516602, 0.2, 1, 0.495859, 0.55296, -0.458702, 0.487803, 0.3, 1, 0.483749, 0.55874, -0.421603, 0.525402, 0.4, 1, 0.508092, 0.536699, -0.444526, 0.506155, 0.5, 1, 0.488538, 0.517026, -0.502939, 0.490985)
+
+[sub_resource type="Animation" id="Animation_a1mqv"]
+resource_name = "PCPowerOut"
+length = 7.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPivot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.707107, 0, 0.707107, 2.9, 1, 0.067367, -0.328541, -0.0621495, 0.940032)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(1.3, 1, -6.90478, 4.63, -6.69505, 1.9, 1, -1.52311, 4.4364, -6.69505, 2.9, 1, 4.5187, 4.63406, -4.63808, 3.7, 1, 1.60743, 4.33395, -6.32982, 4.8, 1, -4.83038, 4.55823, -6.32982, 6.4, 1, -4.83038, 4.55823, -6.32982, 7, 1, -4.83038, 1.87849, -4.49624)
+
+[sub_resource type="Animation" id="Animation_1gedb"]
+resource_name = "TurnCOUNTER2WINDOW"
+length = 0.3
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPivot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.707107, 0, 0.707107, 0.3, 1, 0, 1, 0, -4.37114e-08)
+
+[sub_resource type="Animation" id="Animation_148f8"]
+resource_name = "TurnDOOR2COUNTER"
+length = 0.3
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPivot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, 0, -0.707107, 0, 0.707107)
+
+[sub_resource type="Animation" id="Animation_0uka6"]
+resource_name = "TurnRight"
+length = 0.3
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPivot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.707107, 0, 0.707107, 0.3, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_l8csn"]
+resource_name = "TurnWINDOW2PC"
+length = 0.3
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraPivot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, -7.54979e-08, 0.3, 1, 0, 0.707107, 0, 0.707107)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iair0"]
+_data = {
+"KebabyJumpscare": SubResource("Animation_qnipx"),
+"PCPowerOut": SubResource("Animation_a1mqv"),
+"TurnCOUNTER2WINDOW": SubResource("Animation_1gedb"),
+"TurnDOOR2COUNTER": SubResource("Animation_148f8"),
+"TurnPC2Door": SubResource("Animation_0uka6"),
+"TurnWINDOW2PC": SubResource("Animation_l8csn")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_52i3y"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ip3ud"]
+albedo_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_j8w1t"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7mmyb"]
+albedo_color = Color(0.741176, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_oehpy"]
+albedo_color = Color(0, 0.615686, 0, 1)
+
+[sub_resource type="Animation" id="Animation_m4h2h"]
+resource_name = "Break"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_52vuo"]
+resource_name = "Close"
+length = 0.6
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -9.59015, 4.9216, 8.45161, 0.3, 1, -9.59015, 2.93785, 8.45161, 0.4, 1, -9.59015, 3.11472, 8.45161, 0.6, 1, -9.59015, 2.93894, 8.45161)
+
+[sub_resource type="Animation" id="Animation_1q5lb"]
+resource_name = "Open"
+length = 0.3
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -9.59015, 2.92854, 8.45161, 0.3, 1, -9.59015, 4.9216, 8.45161)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3nws0"]
+_data = {
+"Break": SubResource("Animation_m4h2h"),
+"Close": SubResource("Animation_52vuo"),
+"Open": SubResource("Animation_1q5lb")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tqyqk"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bj5aj"]
+viewport_path = NodePath("Game/Power/Monitor/Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7iib1"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_bj5aj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_420cm"]
+shader = ExtResource("18_k4nsl")
+shader_parameter/amount = 40.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_85psx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_10ny4"]
+viewport_path = NodePath("Game/Clock/Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mt4ie"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_10ny4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_e3ao6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_35wj5"]
+viewport_path = NodePath("King/Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8jkp"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_35wj5")
+
+[sub_resource type="Environment" id="Environment_hlrgt"]
+background_mode = 1
+reflected_light_source = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.3376
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1168, -0.934241, 0)
+script = ExtResource("1_vhpl8")
+
+[node name="RotatingCam" parent="." instance=ExtResource("2_wdal1")]
+
+[node name="Cameras" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartupStatic" type="ColorRect" parent="Cameras"]
+layout_mode = 0
+offset_left = -653.0
+offset_top = -468.0
+offset_right = -613.0
+offset_bottom = -428.0
+scale = Vector2(34.3405, 26.5416)
+
+[node name="Backcover" type="Panel" parent="Cameras"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -681.0
+offset_top = -369.0
+offset_right = -641.0
+offset_bottom = -329.0
+scale = Vector2(33.46, 20.7027)
+
+[node name="MonitorUI" parent="Cameras" instance=ExtResource("3_xwir0")]
+layout_mode = 1
+
+[node name="camera_ui" parent="Cameras" instance=ExtResource("11_st4js")]
+layout_mode = 1
+
+[node name="CamsON" type="AudioStreamPlayer" parent="Cameras"]
+stream = ExtResource("5_g0stf")
+
+[node name="CamsIDLE" type="AudioStreamPlayer" parent="Cameras"]
+stream = ExtResource("6_uk40k")
+volume_db = 5.0
+
+[node name="CamsOFF" type="AudioStreamPlayer3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.91531, 2.49187, 4.07329)
+stream = ExtResource("7_yhi0y")
+
+[node name="CamChange" type="AudioStreamPlayer" parent="Cameras"]
+stream = ExtResource("8_7jwo3")
+volume_db = -5.0
+
+[node name="Power" type="Label" parent="Cameras"]
+layout_mode = 0
+offset_left = -547.0
+offset_top = -300.0
+offset_right = -507.0
+offset_bottom = -274.0
+text = "100% Power"
+
+[node name="Usage" type="Label" parent="Cameras"]
+layout_mode = 0
+offset_left = -546.0
+offset_top = -276.0
+offset_right = -451.0
+offset_bottom = -250.0
+text = "Usage: I"
+
+[node name="Time" type="Label" parent="Cameras"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = -300.0
+offset_right = 589.0
+offset_bottom = -274.0
+text = "12 AM"
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.79833, 3.591, 4.15766)
+script = ExtResource("1_11qfi")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+
+[node name="PlayerLight" type="SpotLight3D" parent="CameraPivot"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraPivot"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_iair0")
+}
+
+[node name="RLampButton" type="Button" parent="CameraPivot"]
+visible = false
+modulate = Color(1, 0.0901961, 0.0588235, 0.752941)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -205.0
+offset_right = 1637.0
+offset_bottom = 1723.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.08, 0.08)
+icon = ExtResource("4_y0201")
+
+[node name="DoorButton" type="Button" parent="CameraPivot"]
+visible = false
+modulate = Color(0.309804, 0.501961, 1, 0.752941)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -200.0
+offset_right = 229.0
+offset_bottom = 320.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("5_n36xr")
+
+[node name="CamButton" type="Button" parent="CameraPivot"]
+modulate = Color(0.239216, 0.631373, 0.811765, 0.752941)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -278.0
+offset_top = -198.0
+offset_right = -14.0
+offset_bottom = 80.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("8_he51f")
+
+[node name="saloon" parent="." instance=ExtResource("1_wegmh")]
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ipwfj")
+autoplay = true
+
+[node name="Game" type="Node3D" parent="."]
+
+[node name="Cameras" type="Node3D" parent="Game"]
+script = ExtResource("15_opsrd")
+
+[node name="Night1Call" type="AudioStreamPlayer3D" parent="Game/Cameras"]
+transform = Transform3D(0.0692292, -0.872053, -0.48449, 0.996864, 0.0791374, 4.30091e-08, 0.0383412, -0.48297, 0.874797, -10.9932, 3.07828, 3.48412)
+stream = ExtResource("16_jfero")
+volume_db = 5.0
+
+[node name="Night2Call" type="AudioStreamPlayer3D" parent="Game/Cameras"]
+transform = Transform3D(0.0692292, -0.872053, -0.48449, 0.996864, 0.0791374, 4.30091e-08, 0.0383412, -0.48297, 0.874797, -10.9932, 3.07828, 3.48412)
+stream = ExtResource("17_j23fj")
+volume_db = 5.0
+
+[node name="Base" type="MeshInstance3D" parent="Game/Cameras"]
+transform = Transform3D(0.00307802, -0.523963, -0.404108, 0.0443218, 0.0475489, 0, 0.00170471, -0.290186, 0.729662, -11.0078, 2.97917, 3.47608)
+mesh = SubResource("BoxMesh_52i3y")
+surface_material_override/0 = SubResource("ORMMaterial3D_ip3ud")
+
+[node name="Screen" type="MeshInstance3D" parent="Game/Cameras"]
+transform = Transform3D(0.00185779, -0.456968, -0.363923, 0.0267512, 0.0414692, 0, 0.0010289, -0.253083, 0.657102, -10.999, 2.99499, 3.48092)
+mesh = SubResource("BoxMesh_52i3y")
+surface_material_override/0 = SubResource("ORMMaterial3D_j8w1t")
+
+[node name="RedButton" type="MeshInstance3D" parent="Game/Cameras"]
+transform = Transform3D(0.00185779, -0.0271466, -0.0183978, 0.0267512, 0.00246351, 0, 0.0010289, -0.0150346, 0.0332193, -11.4206, 3.02037, 3.65838)
+mesh = SubResource("BoxMesh_52i3y")
+surface_material_override/0 = SubResource("ORMMaterial3D_7mmyb")
+
+[node name="GreenButton" type="MeshInstance3D" parent="Game/Cameras"]
+transform = Transform3D(0.00185779, -0.0271466, -0.0183978, 0.0267512, 0.00246351, 0, 0.0010289, -0.0150346, 0.0332193, -11.3936, 3.02037, 3.60972)
+mesh = SubResource("BoxMesh_52i3y")
+surface_material_override/0 = SubResource("ORMMaterial3D_oehpy")
+
+[node name="Power" type="Node3D" parent="Game"]
+script = ExtResource("15_em0au")
+metadata/Power = 100
+metadata/Usage = 0
+
+[node name="IronBar" type="MeshInstance3D" parent="Game/Power"]
+transform = Transform3D(0.517514, 0, 0, 0, 0.864201, 0, 0, 0, 1, -9.59015, 4.9216, 8.45161)
+mesh = ExtResource("10_b885i")
+skeleton = NodePath("../../..")
+metadata/Closed = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Game/Power/IronBar"]
+libraries = {
+"": SubResource("AnimationLibrary_3nws0")
+}
+
+[node name="Cooldown" type="Timer" parent="Game/Power/IronBar"]
+wait_time = 0.5
+
+[node name="Opening" type="AudioStreamPlayer3D" parent="Game/Power/IronBar"]
+stream = ExtResource("12_bq2co")
+volume_db = -5.0
+
+[node name="Closing" type="AudioStreamPlayer3D" parent="Game/Power/IronBar"]
+stream = ExtResource("13_lw8hi")
+
+[node name="MinionBreak" type="AudioStreamPlayer3D" parent="Game/Power/IronBar"]
+stream = ExtResource("19_5drju")
+
+[node name="DoorBreak" type="AudioStreamPlayer3D" parent="Game/Power/IronBar"]
+stream = ExtResource("20_jqe71")
+volume_db = -20.0
+
+[node name="RedstoneLampLight" type="OmniLight3D" parent="Game/Power"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72419, 3.57915, 4.91788)
+visible = false
+light_color = Color(1, 0.533333, 0.466667, 1)
+omni_range = 17.759
+
+[node name="RedstoneLampON" type="AudioStreamPlayer3D" parent="Game/Power/RedstoneLampLight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177698, -0.8581, 0.12146)
+stream = ExtResource("7_in52t")
+
+[node name="RedstoneLampOFF" type="AudioStreamPlayer3D" parent="Game/Power/RedstoneLampLight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177698, -0.8581, 0.12146)
+stream = ExtResource("8_h6rcc")
+
+[node name="RedstoneLampLOOP" type="AudioStreamPlayer3D" parent="Game/Power/RedstoneLampLight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177698, -0.8581, 0.12146)
+stream = ExtResource("9_mswxl")
+volume_db = -15.0
+
+[node name="Monitor" type="Node3D" parent="Game/Power"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0953653, 0)
+
+[node name="Base" type="MeshInstance3D" parent="Game/Power/Monitor"]
+transform = Transform3D(0.501678, 0, 0.271424, 0, 0.821393, 0, -0.141478, 0, 0.96246, -11.2822, 3.42012, 4.55568)
+mesh = SubResource("BoxMesh_52i3y")
+surface_material_override/0 = SubResource("ORMMaterial3D_ip3ud")
+
+[node name="Screen" type="MeshInstance3D" parent="Game/Power/Monitor"]
+transform = Transform3D(-0.115581, 0.510849, 3.26778e-09, -1.86703e-08, 1.0139e-15, -0.276267, -0.411192, -0.143593, 1.16255e-08, -11.0329, 3.50707, 4.47416)
+mesh = SubResource("PlaneMesh_tqyqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_7iib1")
+
+[node name="SubViewport" type="SubViewport" parent="Game/Power/Monitor/Screen"]
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="Game/Power/Monitor/Screen/SubViewport"]
+material = SubResource("ShaderMaterial_420cm")
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -20.0
+offset_right = -13.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Game/Power/Monitor/Screen/SubViewport/Control"]
+use_parent_material = true
+layout_mode = 0
+offset_left = -100.0
+offset_top = -110.0
+offset_right = -60.0
+offset_bottom = -70.0
+scale = Vector2(10, 10)
+color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[node name="Power" type="Label" parent="Game/Power/Monitor/Screen/SubViewport/Control"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 49.0
+offset_bottom = 1.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Power: 100%"
+
+[node name="Usage" type="Label" parent="Game/Power/Monitor/Screen/SubViewport/Control"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 25.0
+offset_right = 49.0
+offset_bottom = 51.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Usage: I"
+
+[node name="Button" type="MeshInstance3D" parent="Game/Power/Monitor"]
+transform = Transform3D(0.0335687, 0, 0.0279059, 0, 0.101519, 0, -0.00946673, 0, 0.0989533, -10.9303, 3.13186, 4.82093)
+mesh = SubResource("BoxMesh_52i3y")
+surface_material_override/0 = SubResource("ORMMaterial3D_7mmyb")
+
+[node name="Update" type="Timer" parent="Game/Power"]
+autostart = true
+
+[node name="PowerDown" type="AudioStreamPlayer" parent="Game/Power"]
+stream = ExtResource("23_tr83s")
+pitch_scale = 0.74
+
+[node name="OutageTimer" type="Timer" parent="Game/Power"]
+one_shot = true
+
+[node name="OutageDeathTimer" type="Timer" parent="Game/Power"]
+
+[node name="Clock" type="MeshInstance3D" parent="Game"]
+transform = Transform3D(0.208101, 0, -0.0586825, 0, 0.239945, 0, 0.029058, 0, 0.420263, -12.3389, 4.05747, 3.71517)
+mesh = SubResource("BoxMesh_52i3y")
+surface_material_override/0 = SubResource("ORMMaterial3D_ip3ud")
+script = ExtResource("24_7cisg")
+
+[node name="Beep" type="AudioStreamPlayer3D" parent="Game/Clock"]
+transform = Transform3D(4.71346, 0, 0.658154, 0, 4.16762, 0, -0.325899, 0, 2.33396, 0, 0, 0)
+stream = ExtResource("25_q0ou1")
+
+[node name="ClockTimer" type="Timer" parent="Game/Clock"]
+wait_time = 50.0
+autostart = true
+
+[node name="Screen" type="MeshInstance3D" parent="Game/Clock"]
+transform = Transform3D(-0.000683837, 0.239945, 2.22045e-15, 1.71276e-08, 1.83049e-11, -0.352581, -0.391834, -0.000418769, -1.54118e-08, 0.574612, 0.0459824, 0.0119514)
+mesh = SubResource("PlaneMesh_85psx")
+surface_material_override/0 = SubResource("StandardMaterial3D_mt4ie")
+
+[node name="SubViewport" type="SubViewport" parent="Game/Clock/Screen"]
+render_target_update_mode = 4
+
+[node name="Label" type="Label" parent="Game/Clock/Screen/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -126.0
+offset_right = -168.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+theme_override_colors/font_color = Color(0, 0.721569, 0.0823529, 1)
+text = "12 AM"
+
+[node name="PCLight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.1247, 5.41484, 4.05913)
+spot_range = 5.775
+spot_angle = 26.82
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90478, 4.63, -6.69505)
+mesh = SubResource("BoxMesh_e3ao6")
+
+[node name="King" parent="." instance=ExtResource("24_k1tl5")]
+transform = Transform3D(-0.999994, 0, 0.00349059, 0, 1, 0, -0.00349059, 0, -0.999994, -9.686, 2.865, 9.67)
+visible = false
+
+[node name="KingTimer" type="Timer" parent="King"]
+one_shot = true
+
+[node name="Screen" type="MeshInstance3D" parent="King"]
+transform = Transform3D(0.190485, -0.00694609, 2.05301e-09, 2.35807e-09, 2.22459e-08, -0.173568, 0.00249349, 0.530601, 7.30383e-09, -0.00350046, 1.65462, 0.260097)
+visible = false
+mesh = SubResource("PlaneMesh_tqyqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_e8jkp")
+
+[node name="SubViewport" type="SubViewport" parent="King/Screen"]
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="King/Screen/SubViewport"]
+material = SubResource("ShaderMaterial_420cm")
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -20.0
+offset_right = -13.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="King/Screen/SubViewport/Control"]
+use_parent_material = true
+layout_mode = 0
+offset_left = -100.0
+offset_top = -110.0
+offset_right = -60.0
+offset_bottom = -70.0
+scale = Vector2(10, 10)
+color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[node name="KebabyScary" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_wdcb1")
+volume_db = 3.962
+
+[node name="QuitTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hlrgt")
+
+[connection signal="KingGone" from="." to="Cameras/camera_ui" method="_on_main_king_gone"]
+[connection signal="rotateLeft" from="RotatingCam" to="CameraPivot" method="_on_rotating_cam_rotate_left"]
+[connection signal="rotateRight" from="RotatingCam" to="CameraPivot" method="_on_rotating_cam_rotate_right"]
+[connection signal="CamRequest" from="Cameras/MonitorUI" to="." method="_on_monitor_ui_cam_request"]
+[connection signal="CamRequest" from="Cameras/MonitorUI" to="Cameras/camera_ui" method="_on_monitor_ui_cam_request"]
+[connection signal="ClearFinished" from="Cameras/camera_ui" to="Game/Power" method="_on_camera_ui_clear_finished"]
+[connection signal="ClearStart" from="Cameras/camera_ui" to="Game/Power" method="_on_camera_ui_clear_start"]
+[connection signal="ExitCams" from="Cameras/camera_ui" to="." method="_on_camera_ui_exit_cams"]
+[connection signal="ExitCams" from="Cameras/camera_ui" to="Game/Power" method="_on_camera_ui_exit_cams"]
+[connection signal="KebabDoor" from="Cameras/camera_ui" to="." method="_on_camera_ui_kebab_door"]
+[connection signal="MinionFarted" from="Cameras/camera_ui" to="Game/Power" method="_on_camera_ui_minion_farted"]
+[connection signal="Moo" from="Cameras/camera_ui" to="Game/Power" method="_on_camera_ui_moo"]
+[connection signal="OpenMap" from="Cameras/camera_ui" to="Cameras/MonitorUI" method="_on_camera_ui_open_map"]
+[connection signal="finished" from="Cameras/CamsON" to="." method="_on_cams_on_finished"]
+[connection signal="finished" from="Cameras/CamChange" to="." method="_on_cam_change_finished"]
+[connection signal="animation_finished" from="CameraPivot/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="CameraPivot/RLampButton" to="." method="_on_r_lamp_button_pressed"]
+[connection signal="pressed" from="CameraPivot/RLampButton" to="Game/Power" method="_on_r_lamp_button_pressed"]
+[connection signal="pressed" from="CameraPivot/DoorButton" to="." method="_on_door_button_pressed"]
+[connection signal="pressed" from="CameraPivot/DoorButton" to="Game/Power" method="_on_door_button_pressed"]
+[connection signal="pressed" from="CameraPivot/CamButton" to="." method="_on_cam_button_pressed"]
+[connection signal="pressed" from="CameraPivot/CamButton" to="Game/Power" method="_on_cam_button_pressed"]
+[connection signal="PowerOutage" from="Game/Power" to="." method="_on_power_power_outage"]
+[connection signal="PowerOutage" from="Game/Power" to="Cameras/camera_ui" method="_on_power_power_outage"]
+[connection signal="timeout" from="Game/Power/IronBar/Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Game/Power/Update" to="." method="_on_update_timeout"]
+[connection signal="timeout" from="Game/Power/Update" to="Game/Power" method="_on_update_timeout"]
+[connection signal="timeout" from="Game/Power/OutageTimer" to="." method="_on_outage_timer_timeout"]
+[connection signal="timeout" from="Game/Power/OutageDeathTimer" to="." method="_on_outage_death_timer_timeout"]
+[connection signal="NightComplete" from="Game/Clock" to="." method="_on_clock_night_complete"]
+[connection signal="finished" from="Game/Clock/Beep" to="Game/Clock" method="_on_beep_finished"]
+[connection signal="timeout" from="Game/Clock/ClockTimer" to="." method="_on_clock_timer_timeout"]
+[connection signal="timeout" from="Game/Clock/ClockTimer" to="Game/Clock" method="_on_clock_timer_timeout"]
+[connection signal="timeout" from="King/KingTimer" to="." method="_on_king_timer_timeout"]
+[connection signal="finished" from="KebabyScary" to="." method="_on_kebaby_scary_finished"]

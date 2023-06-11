@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=3 uid="uid://5mshmj7wus5k"]
+
+[ext_resource type="Script" path="res://Scripts/monitor_ui.gd" id="1_dxs3j"]
+[ext_resource type="Shader" path="res://Scripts/monitor_ui.gdshader" id="1_h7ylf"]
+[ext_resource type="Texture2D" uid="uid://jx8a4brxlsgk" path="res://Assets/Cams/CamMaps.png" id="2_ovqs7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4i5n0"]
+shader = ExtResource("1_h7ylf")
+shader_parameter/amount = 40.0
+
+[node name="MonitorUI" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dxs3j")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_4i5n0")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="CamMaps" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_4i5n0")
+position = Vector2(576, 323)
+scale = Vector2(1.13822, 1.15811)
+texture = ExtResource("2_ovqs7")
+
+[node name="YouLabel" type="Label" parent="."]
+material = SubResource("ShaderMaterial_4i5n0")
+layout_mode = 0
+offset_left = 512.0
+offset_top = 491.0
+offset_right = 555.0
+offset_bottom = 517.0
+text = "Y O U"
+
+[node name="PT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 496.0
+offset_right = 831.0
+offset_bottom = 553.0
+scale = Vector2(0.8, 0.8)
+text = "PT
+"
+
+[node name="OT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 842.0
+offset_top = 345.0
+offset_right = 908.0
+offset_bottom = 402.0
+scale = Vector2(0.8, 0.8)
+text = "OT
+"
+
+[node name="SF" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 419.0
+offset_right = 1074.0
+offset_bottom = 476.0
+scale = Vector2(0.8, 0.8)
+text = "SF"
+
+[node name="MB" type="Button" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 520.0
+offset_right = 203.0
+offset_bottom = 577.0
+scale = Vector2(0.8, 0.8)
+text = "MB"
+
+[node name="KB" type="Button" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 400.0
+offset_right = 221.0
+offset_bottom = 457.0
+scale = Vector2(0.8, 0.8)
+text = "KB"
+
+[node name="MT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 290.0
+offset_right = 183.0
+offset_bottom = 347.0
+scale = Vector2(0.8, 0.8)
+text = "MT"
+
+[node name="BoH" type="Button" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 168.0
+offset_right = 500.0
+offset_bottom = 225.0
+scale = Vector2(0.8, 0.8)
+text = "BoH
+"
+
+[node name="Cam01" type="Button" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 488.0
+offset_right = 522.0
+offset_bottom = 545.0
+scale = Vector2(0.8, 0.8)
+text = "Cam 01"
+
+[node name="Cam02" type="Button" parent="."]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 376.0
+offset_right = 590.0
+offset_bottom = 433.0
+scale = Vector2(0.8, 0.8)
+text = "Cam 02"
+
+[node name="Cam03" type="Button" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 340.0
+offset_right = 461.0
+offset_bottom = 397.0
+scale = Vector2(0.8, 0.8)
+text = "Cam 03"
+
+[connection signal="pressed" from="PT" to="." method="_on_pt_pressed"]
+[connection signal="pressed" from="OT" to="." method="_on_ot_pressed"]
+[connection signal="pressed" from="SF" to="." method="_on_sf_pressed"]
+[connection signal="pressed" from="MB" to="." method="_on_mb_pressed"]
+[connection signal="pressed" from="KB" to="." method="_on_kb_pressed"]
+[connection signal="pressed" from="MT" to="." method="_on_mt_pressed"]
+[connection signal="pressed" from="BoH" to="." method="_on_bo_h_pressed"]
+[connection signal="pressed" from="Cam01" to="." method="_on_cam_01_pressed"]
+[connection signal="pressed" from="Cam02" to="." method="_on_cam_02_pressed"]
+[connection signal="pressed" from="Cam03" to="." method="_on_cam_03_pressed"]

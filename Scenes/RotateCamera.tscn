@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://cclfyqmyhsl5n"]
+
+[ext_resource type="Script" path="res://Scripts/RotateCamera.gd" id="1_3ltdp"]
+
+[node name="RotatingCam" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3ltdp")
+
+[node name="LeftProx" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 280.0
+offset_bottom = 646.0
+
+[node name="CenterProx" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 295.0
+offset_right = 863.0
+offset_bottom = 646.0
+
+[node name="RightProx" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 877.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Left" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 34.0
+offset_bottom = 635.0
+text = "<"
+
+[node name="Right" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 1116.0
+offset_top = 5.0
+offset_right = 1142.0
+offset_bottom = 635.0
+text = ">"
+
+[connection signal="mouse_entered" from="LeftProx" to="." method="_on_left_prox_mouse_entered"]
+[connection signal="mouse_entered" from="CenterProx" to="." method="_on_center_prox_mouse_entered"]
+[connection signal="mouse_entered" from="RightProx" to="." method="_on_right_prox_mouse_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="Left" to="." method="_on_left_mouse_entered"]
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="mouse_entered" from="Right" to="." method="_on_right_mouse_entered"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
